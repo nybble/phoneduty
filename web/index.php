@@ -91,7 +91,7 @@ if (!isset($_SESSION['end_user_confirmed_call']) and strtolower($validate_human)
                 $dialvars['record'] = $record;
             }
         }
-        if (!isnull(strtolower($callerid)) {
+        if (strtolower($callerid) != 'caller') {
             $dialvars['callerid'] = $callerid;
         }
         $dial = $twilio->dial(NULL, $dialvars);
