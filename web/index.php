@@ -20,6 +20,7 @@ $serviceAPItoken = getenv('PAGERDUTY_SERVICE_API_TOKEN');
 $domain          = getenv('PAGERDUTY_DOMAIN');
 $greeting        = getenv('PHONEDUTY_ANNOUNCE_GREETING');
 $validate_human  = getenv('PHONEDUTY_CHECK_FOR_HUMAN');
+$callerid        = getenv('PHONEDUTY_OUT_CALLERID');
 
 // Should we announce the local time of the on-call person?
 // (helps raise awareness you might be getting somebody out of bed)
@@ -89,6 +90,9 @@ if (!isset($_SESSION['end_user_confirmed_call']) and strtolower($validate_human)
             } else {
                 $dialvars['record'] = $record;
             }
+        }
+        if (!isnull(strtolower($callerid)) {
+            $dialvars['callerid'] = $callerid;
         }
         $dial = $twilio->dial(NULL, $dialvars);
         $dial->number($user['phone_number'], array('url' => "check_for_human.php"));
