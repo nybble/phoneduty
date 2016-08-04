@@ -92,7 +92,7 @@ if (!isset($_SESSION['end_user_confirmed_call']) and strtolower($validate_human)
             }
         }
         if (strtolower($callerid) != 'caller') {
-            $dialvars['callerid'] = $callerid;
+            $dialvars['callerId'] = $callerid;
         }
         $dial = $twilio->dial(NULL, $dialvars);
         $dial->number($user['phone_number'], array('url' => "check_for_human.php"));
