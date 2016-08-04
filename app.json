@@ -37,8 +37,8 @@
       "required": false
     },
     "PHONEDUTY_OUT_CALLERID": {
-      "description": "Optional: Should we manually set the outbound callerid? Useful for ensuring engineers answer the phone. defaults blank if not set.",
-      "value": "",
+      "description": "Optional: Should we manually set the outbound callerid? Useful for ensuring engineers answer the phone. defaults to callers number if not set.",
+      "value": "caller",
       "required": false      
     },
     "TWILIO_LANGUAGE": {
