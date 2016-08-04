@@ -36,6 +36,11 @@
       "value": "false",
       "required": false
     },
+    "PHONEDUTY_OUT_CALLERID": {
+      "description": "Optional: Should we manually set the outbound callerid? Useful for ensuring engineers answer the phone. defaults blank if not set.",
+      "value": "",
+      "required": false      
+    }
     "TWILIO_LANGUAGE": {
       "description": "What language should Twilio use? Default is en-GB.",
       "value": "en-GB",
